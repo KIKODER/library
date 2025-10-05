@@ -7,3 +7,15 @@ function Book(title, author, pages, read) {
     this.read = read;
 }
 
+function addBook() {
+    let title = prompt("Enter a title:");
+    let author = prompt("Enter the author:");
+    let pages = prompt("Enter how many pages it has:");
+    let read = prompt("Enter a read status (have/have not):");
+
+    const book = new Book(title, author, pages, read);
+
+    myLibrary.push(book);
+}
+
+const addButton = document.querySelector("#add");
