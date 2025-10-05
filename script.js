@@ -19,3 +19,8 @@ function addBook() {
 }
 
 const addButton = document.querySelector("#add");
+
+addButton.addEventListener("click", () => {
+    addBook();
+    console.log(myLibrary);
+});
