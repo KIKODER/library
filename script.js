@@ -18,9 +18,15 @@ function addBook() {
     myLibrary.push(book);
 }
 
+myLibrary.push(new Book('1984', 'George Orwell', '328', 'have not'));
+
 const addButton = document.querySelector("#add");
 
 addButton.addEventListener("click", () => {
     addBook();
     console.log(myLibrary);
 });
+
+function displayBooks(array) {
+    
+}
