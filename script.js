@@ -49,13 +49,15 @@ function displayBooks(array) {
 }
 
 //Sets default value(s) into 'myLibrary' array//
-myLibrary.push(new Book('1984', 'George Orwell', '328', 'Have not'));
+myLibrary.push(new Book('1984', 'George Orwell', '328', 'Read'));
+myLibrary.push(new Book('The Great Gatsby', 'F. Scott Fitzgerald', '230', 'Read'));
+myLibrary.push(new Book('The Art of War', 'Sun Tzu', '192', 'Have not'));
 
-displayBooks(myLibrary);Z
+displayBooks(myLibrary);
 
 const addButton = document.querySelector("#add");
 
 addButton.addEventListener("click", () => {
     addBook();
-    console.log(myLibrary);
+    displayBooks(myLibrary);
 });
