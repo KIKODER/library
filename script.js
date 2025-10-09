@@ -18,16 +18,6 @@ function addBook() {
     myLibrary.push(book);
 }
 
-//Sets default value(s) into 'myLibrary' array//
-myLibrary.push(new Book('1984', 'George Orwell', '328', 'Have not'));
-
-const addButton = document.querySelector("#add");
-
-addButton.addEventListener("click", () => {
-    addBook();
-    console.log(myLibrary);
-});
-
 function displayBooks(array) {
     const shelf = document.querySelector("#shelf");
 
@@ -58,4 +48,14 @@ function displayBooks(array) {
     }
 }
 
-displayBooks(myLibrary);
+//Sets default value(s) into 'myLibrary' array//
+myLibrary.push(new Book('1984', 'George Orwell', '328', 'Have not'));
+
+displayBooks(myLibrary);Z
+
+const addButton = document.querySelector("#add");
+
+addButton.addEventListener("click", () => {
+    addBook();
+    console.log(myLibrary);
+});
