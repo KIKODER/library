@@ -18,6 +18,7 @@ function addBook() {
     myLibrary.push(book);
 }
 
+//Sets default value into myLibrary array//
 myLibrary.push(new Book('1984', 'George Orwell', '328', 'have not'));
 
 const addButton = document.querySelector("#add");
@@ -28,5 +29,19 @@ addButton.addEventListener("click", () => {
 });
 
 function displayBooks(array) {
-    
+    const shelf = document.querySelector("#shelf");
+    //Clear display//
+    shelf.innerHTML = "";
+    //Loop through array//
+    for (let i = 0; i < array.length; i++) {
+        const div = document.createElement("div");
+        const title = document.createElement("p");
+
+        title.textContent = "title";
+
+        shelf.appendChild(div);
+        div.appendChild(title);
+    }
 }
+
+displayBooks(myLibrary);

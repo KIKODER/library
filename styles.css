@@ -1,3 +1,15 @@
 header {
     text-align: center;
 }
+
+#shelf {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+
+#shelf div {
+    background-color: rgb(170, 185, 185);
+    width: 200px;
+    padding: 0.5rem;
+}
