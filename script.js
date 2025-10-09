@@ -18,8 +18,8 @@ function addBook() {
     myLibrary.push(book);
 }
 
-//Sets default value into myLibrary array//
-myLibrary.push(new Book('1984', 'George Orwell', '328', 'have not'));
+//Sets default value(s) into 'myLibrary' array//
+myLibrary.push(new Book('1984', 'George Orwell', '328', 'Have not'));
 
 const addButton = document.querySelector("#add");
 
@@ -30,17 +30,31 @@ addButton.addEventListener("click", () => {
 
 function displayBooks(array) {
     const shelf = document.querySelector("#shelf");
+
     //Clear display//
     shelf.innerHTML = "";
+
     //Loop through array//
     for (let i = 0; i < array.length; i++) {
+        //Create elements//
         const div = document.createElement("div");
         const title = document.createElement("p");
+        const author = document.createElement("p");
+        const pages = document.createElement("p");
+        const read = document.createElement("p");
 
-        title.textContent = "title";
+        //Get content from array for elements//
+        title.textContent = "Title: " + array[i].title;
+        author.textContent = "Author: " + array[i].author;
+        pages.textContent = "Page Count: " + array[i].pages;
+        read.textContent = "Read Status: " + array[i].read;
 
+        //Add elements to DOM//
         shelf.appendChild(div);
         div.appendChild(title);
+        div.appendChild(author);
+        div.appendChild(pages);
+        div.appendChild(read);
     }
 }
 
