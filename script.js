@@ -5,6 +5,7 @@ function Book(title, author, pages, read) {
     this.author = author;
     this.pages = pages;
     this.read = read;
+    //Generates new ID for easier manipulation//
     this.id = crypto.randomUUID();
 }
 
@@ -33,12 +34,14 @@ function displayBooks(array) {
         const author = document.createElement("p");
         const pages = document.createElement("p");
         const read = document.createElement("p");
+        const remove = document.createElement("button");
 
         //Get content from array for elements//
         title.textContent = "Title: " + array[i].title;
         author.textContent = "Author: " + array[i].author;
         pages.textContent = "Page Count: " + array[i].pages;
         read.textContent = "Read Status: " + array[i].read;
+        remove.textContent = "X";
 
         //Add elements to DOM//
         shelf.appendChild(div);
@@ -46,6 +49,9 @@ function displayBooks(array) {
         div.appendChild(author);
         div.appendChild(pages);
         div.appendChild(read);
+        div.appendChild(remove);
+
+        console.log(array[i].id);
     }
 }
 
