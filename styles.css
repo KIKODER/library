@@ -1,5 +1,36 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: linear-gradient(#3A5A40, #588157, #A3B18A);
+    min-height: 100vh;
+    overflow-y: hidden;
+}
+
 header {
     text-align: center;
+    font-size: 1.5rem;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#add {
+    width: 3rem;
+    height: 3rem;
+    background: linear-gradient(#588157, #1A5031);
+    border: none;
+    border-radius: 50%;
+    color: white;
+    font-size: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
 }
 
 #shelf {
@@ -9,18 +40,21 @@ header {
 }
 
 #shelf div {
-    background-color: rgb(170, 185, 185);
+    background: linear-gradient(#588157, #1A5031, #0C2C1C);
+    color: white;
+    font-weight: bold;
     width: 200px;
     border-radius: 10px;
-    padding: 0.5rem;
+    padding: 1.5rem;
     margin: 1rem;
 }
 
 #shelf button {
     color: white;
-    background-color: rgba(0, 0, 0, 0.238);
+    background-color: rgba(0, 0, 0, 0.396);
     font-weight: bold;
     width: 2rem;
+    height: 2rem;
     border-radius: 5px;
     border-style: none;
     cursor: pointer;
