@@ -1,4 +1,5 @@
 const myLibrary = [];
+const newBook = document.querySelector("#newBook");
 
 function Book(title, author, pages, read) {
     this.title = title;
@@ -10,10 +11,7 @@ function Book(title, author, pages, read) {
 }
 
 function addBook() {
-    let title = prompt("Enter a title:");
-    let author = prompt("Enter the author:");
-    let pages = prompt("Enter how many pages it has:");
-    let read = prompt("Enter a read status (have/have not):");
+    newBook.showModal();
 
     const book = new Book(title, author, pages, read);
 

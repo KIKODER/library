@@ -14,6 +14,30 @@
     
     <main>
         <button id="add">+</button>
+        <dialog id="newBook">
+            <form>
+                <div>
+                    <label for="title">Enter title:</label>
+                    <input type="text" name="title" id="title">
+                </div>
+                <div>
+                    <label for="author">Enter author name:</label>
+                    <input type="text" name="author" id="author">
+                </div>
+                <div>
+                    <label for="pages">Enter page count:</label>
+                    <input type="number" name="pages" id="pages">
+                </div>
+                <div>
+                    <label for="read">Read status:</label>
+                    <select name="read" id="read">
+                        <option value="default">Choose..</option>
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                    </select>
+                </div>
+            </form>
+        </dialog>
         <section id="shelf"></section>
     </main>
 
