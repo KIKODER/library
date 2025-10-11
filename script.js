@@ -1,21 +1,16 @@
 const myLibrary = [];
 const newBook = document.querySelector("#newBook");
+const form = newBook.querySelector("form");
+const addButton = document.querySelector("#add");
+const closeButton = document.querySelector("#close");
 
 function Book(title, author, pages, read) {
     this.title = title;
     this.author = author;
     this.pages = pages;
     this.read = read;
-    //Generates new ID for easier manipulation//
+    //Generates new ID for easier array manipulation//
     this.id = crypto.randomUUID();
-}
-
-function addBook() {
-    newBook.showModal();
-
-    const book = new Book(title, author, pages, read);
-
-    myLibrary.push(book);
 }
 
 function removeBook(id) {
@@ -66,16 +61,35 @@ function displayBooks(array) {
     }
 }
 
-//Sets default value(s) into 'myLibrary' array//
-myLibrary.push(new Book('1984', 'George Orwell', '328', 'Read'));
-myLibrary.push(new Book('The Great Gatsby', 'F. Scott Fitzgerald', '230', 'Read'));
-myLibrary.push(new Book('The Art of War', 'Sun Tzu', '192', 'Have not'));
+//Sets default value(s) into 'myLibrary' array// 
+myLibrary.push(new Book('1984', 'George Orwell', '328', 'Yes')); myLibrary.push(new Book('The Great Gatsby', 'F. Scott Fitzgerald', '230', 'Yes')); 
+myLibrary.push(new Book('The Art of War', 'Sun Tzu', '192', 'No')); 
 
 displayBooks(myLibrary);
 
-const addButton = document.querySelector("#add");
-
+//Button handlers//
 addButton.addEventListener("click", () => {
-    addBook();
+    newBook.showModal();
+});
+
+closeButton.addEventListener("click", () => {
+    newBook.close();
+})
+
+form.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const titleValue = document.querySelector("#title").value;
+    const authorValue = document.querySelector("#author").value;
+    const pagesValue = document.querySelector("#pages").value;
+    const readValue = document.querySelector("#read").value;
+
+    const book = new Book(titleValue, authorValue, pagesValue, readValue);
+
+    myLibrary.push(book);
+
     displayBooks(myLibrary);
+
+    newBook.close();
+    e.target.reset();
 });
