@@ -1,15 +1,29 @@
+:root {
+    font-family: Roboto, Helvetica, Arial, sans-serif;
+}
+
 html, body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     background: linear-gradient(#3A5A40, #588157, #A3B18A);
     min-height: 100vh;
-    overflow-y: hidden;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+html::-webkit-scrollbar {
+    display: none;
 }
 
 header {
     text-align: center;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
+    color: #b1d86e;
+}
+
+.sub {
+    color: #9eb675ee;
 }
 
 main {
@@ -22,10 +36,11 @@ main {
 #add {
     width: 3rem;
     height: 3rem;
+    margin-bottom: 2rem;
     background: linear-gradient(#588157, #1A5031);
     border: none;
     border-radius: 50%;
-    color: white;
+    color: #9eb675ee;
     font-size: 3rem;
     display: flex;
     justify-content: center;
@@ -41,7 +56,7 @@ main {
 
 #shelf div {
     background: linear-gradient(#588157, #1A5031, #0C2C1C);
-    color: white;
+    color: #bed29bee;
     font-weight: bold;
     width: 200px;
     border-radius: 10px;
@@ -50,7 +65,7 @@ main {
 }
 
 #shelf button {
-    color: white;
+    color: #c3d6a2ee;
     background-color: rgba(0, 0, 0, 0.396);
     font-weight: bold;
     width: 2rem;

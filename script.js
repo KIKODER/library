@@ -20,6 +20,14 @@ function addBook() {
     myLibrary.push(book);
 }
 
+function removeBook(id) {
+    const index = myLibrary.findIndex(book => book.id === id);
+    if (index !== -1) {
+        myLibrary.splice(index, 1);
+        displayBooks(myLibrary);
+    }
+}
+
 function displayBooks(array) {
     const shelf = document.querySelector("#shelf");
 
@@ -42,6 +50,11 @@ function displayBooks(array) {
         pages.textContent = "Page Count: " + array[i].pages;
         read.textContent = "Read Status: " + array[i].read;
         remove.textContent = "X";
+
+        //Removes book on button call//
+        remove.addEventListener("click", () => {
+            removeBook(array[i].id);
+        });
 
         //Add elements to DOM//
         shelf.appendChild(div);
