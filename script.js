@@ -4,6 +4,10 @@ const form = newBook.querySelector("form");
 const addButton = document.querySelector("#add");
 const closeButton = document.querySelector("#close");
 
+function toggleRead(value) {
+    return !value;
+}
+
 function Book(title, author, pages, read) {
     this.title = title;
     this.author = author;
