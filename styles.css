@@ -16,6 +16,11 @@ html::-webkit-scrollbar {
     display: none;
 }
 
+#logo {
+    width: 250px;
+    margin-bottom: -6rem;
+}
+
 header {
     text-align: center;
     font-size: 2rem;
