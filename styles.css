@@ -71,15 +71,15 @@ main {
     color: #c3d6a2ee;
     box-shadow: 0px 0px 20px #c3d6a232;
     background-color: rgba(0, 0, 0, 0.103);
+    padding: 5px 15px;
     font-weight: bold;
     font-size: 1.2rem;
-    width: 2rem;
-    height: 2rem;
     border-radius: 25%;
-    border-style: none;
+    border: none;
     cursor: pointer;
-    float: right;
 }
+
+
 
 :modal {
     color: #bed29bee;

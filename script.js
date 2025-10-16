@@ -4,15 +4,15 @@ const form = newBook.querySelector("form");
 const addButton = document.querySelector("#add");
 const closeButton = document.querySelector("#close");
 
-function toggleRead(value) {
+function togglestatus(value) {
     return !value;
 }
 
-function Book(title, author, pages, read) {
+function Book(title, author, pages, status) {
     this.title = title;
     this.author = author;
     this.pages = pages;
-    this.read = read;
+    this.status = status;
     //Generates new ID for easier array manipulation//
     this.id = crypto.randomUUID();
 }
@@ -38,14 +38,14 @@ function displayBooks(array) {
         const title = document.createElement("p");
         const author = document.createElement("p");
         const pages = document.createElement("p");
-        const read = document.createElement("p");
+        const status = document.createElement("button");
         const remove = document.createElement("button");
 
         //Get content from array for elements//
         title.textContent = "Title: " + array[i].title;
         author.textContent = "Author: " + array[i].author;
         pages.textContent = "Page Count: " + array[i].pages;
-        read.textContent = "Read Status: " + array[i].read;
+        status.textContent = "Status: " + array[i].status;
         remove.textContent = "X";
 
         //Removes book on button call//
@@ -58,7 +58,7 @@ function displayBooks(array) {
         div.appendChild(title);
         div.appendChild(author);
         div.appendChild(pages);
-        div.appendChild(read);
+        div.appendChild(status);
         div.appendChild(remove);
 
         console.log(array[i].id);
@@ -66,8 +66,8 @@ function displayBooks(array) {
 }
 
 //Sets default value(s) into 'myLibrary' array// 
-myLibrary.push(new Book('1984', 'George Orwell', '328', 'Yes')); myLibrary.push(new Book('The Great Gatsby', 'F. Scott Fitzgerald', '230', 'Yes')); 
-myLibrary.push(new Book('The Art of War', 'Sun Tzu', '192', 'No')); 
+myLibrary.push(new Book('1984', 'George Orwell', '328', 'Read')); myLibrary.push(new Book('The Great Gatsby', 'F. Scott Fitzgerald', '230', 'Read')); 
+myLibrary.push(new Book('The Art of War', 'Sun Tzu', '192', 'Not Read')); 
 
 displayBooks(myLibrary);
 
@@ -86,9 +86,9 @@ form.addEventListener("submit", (e) => {
     const titleValue = document.querySelector("#title").value;
     const authorValue = document.querySelector("#author").value;
     const pagesValue = document.querySelector("#pages").value;
-    const readValue = document.querySelector("#read").value;
+    const statusValue = document.querySelector("#status").value;
 
-    const book = new Book(titleValue, authorValue, pagesValue, readValue);
+    const book = new Book(titleValue, authorValue, pagesValue, statusValue);
 
     myLibrary.push(book);
 
