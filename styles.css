@@ -68,18 +68,27 @@ main {
 }
 
 #shelf button {
-    color: #c3d6a2ee;
-    box-shadow: 0px 0px 20px #c3d6a232;
-    background-color: rgba(0, 0, 0, 0.103);
     padding: 5px 15px;
     font-weight: bold;
     font-size: 1.2rem;
-    border-radius: 25%;
+    border-radius: 10px;
     border: none;
     cursor: pointer;
 }
 
+.rButton {
+    box-shadow: none;
+    color: #0C2C1C;
+    background-color: #c3d6a2ee;
+    margin-left: 5px;
+}
 
+.remove {
+    float: right;
+    box-shadow: 0px 0px 20px #c3d6a232;
+    color: #c3d6a2ee;
+    background-color: rgba(0, 0, 0, 0.103);
+}
 
 :modal {
     color: #bed29bee;

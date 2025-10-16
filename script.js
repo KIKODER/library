@@ -4,15 +4,15 @@ const form = newBook.querySelector("form");
 const addButton = document.querySelector("#add");
 const closeButton = document.querySelector("#close");
 
-function togglestatus(value) {
+function toggleRead(value) {
     return !value;
 }
 
-function Book(title, author, pages, status) {
+function Book(title, author, pages, read) {
     this.title = title;
     this.author = author;
     this.pages = pages;
-    this.status = status;
+    this.read = (read === "Read");
     //Generates new ID for easier array manipulation//
     this.id = crypto.randomUUID();
 }
@@ -38,15 +38,29 @@ function displayBooks(array) {
         const title = document.createElement("p");
         const author = document.createElement("p");
         const pages = document.createElement("p");
-        const status = document.createElement("button");
+        const rLabel = document.createElement("label");
+        const read = document.createElement("button");
         const remove = document.createElement("button");
 
         //Get content from array for elements//
         title.textContent = "Title: " + array[i].title;
         author.textContent = "Author: " + array[i].author;
         pages.textContent = "Page Count: " + array[i].pages;
-        status.textContent = "Status: " + array[i].status;
+        rLabel.textContent = "Status:";
+
+        read.textContent = array[i].read ? "Read" : "Not Read";
+        read.id = "read";
+        read.classList.add("rButton");
+
+        rLabel.setAttribute("for", "read");
+
+        read.addEventListener("click", () => {
+            array[i].read = !array[i].read;
+            displayBooks(myLibrary);
+        });
+
         remove.textContent = "X";
+        remove.classList.add("remove");
 
         //Removes book on button call//
         remove.addEventListener("click", () => {
@@ -58,7 +72,8 @@ function displayBooks(array) {
         div.appendChild(title);
         div.appendChild(author);
         div.appendChild(pages);
-        div.appendChild(status);
+        div.appendChild(rLabel);
+        div.appendChild(read);
         div.appendChild(remove);
 
         console.log(array[i].id);
@@ -86,9 +101,9 @@ form.addEventListener("submit", (e) => {
     const titleValue = document.querySelector("#title").value;
     const authorValue = document.querySelector("#author").value;
     const pagesValue = document.querySelector("#pages").value;
-    const statusValue = document.querySelector("#status").value;
+    const readValue = document.querySelector("#read").value;
 
-    const book = new Book(titleValue, authorValue, pagesValue, statusValue);
+    const book = new Book(titleValue, authorValue, pagesValue, readValue);
 
     myLibrary.push(book);
 
