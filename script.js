@@ -103,6 +103,10 @@ form.addEventListener("submit", (e) => {
     const pagesValue = document.querySelector("#pages").value;
     const readValue = document.querySelector("#read").value;
 
+    if (!titleValue || !authorValue || !pagesValue) {
+        return;
+    }
+
     const book = new Book(titleValue, authorValue, pagesValue, readValue);
 
     myLibrary.push(book);
